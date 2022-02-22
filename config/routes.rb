@@ -1,18 +1,4 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  # DISPLAY ALL
-  get 'tasks', to: 'tasks#index'
-
-  # CREATE
-  get 'tasks/new', to: 'tasks#new', as: :new
-  post 'tasks', to: 'tasks#create'
-
-  # UPDATE
-  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit
-  patch 'tasks/:id', to: 'tasks#update'
-
-  # DISPLAY by ID
-  get 'tasks/:id', to: 'tasks#show', as: :task
-  # DELETE
-  delete 'tasks/:id', to: 'tasks#destroy', as: :destroy
+  resources :tasks
 end
